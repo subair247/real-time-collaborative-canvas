@@ -1,0 +1,27 @@
+{
+  "name": "collaborative-canvas",
+  "version": "1.0.0",
+  "description": "A real-time multi-user drawing application using Canvas API and WebSockets.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "canvas",
+    "websockets",
+    "socket.io",
+    "real-time",
+    "collaboration"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

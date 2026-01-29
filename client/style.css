@@ -1,0 +1,73 @@
+/* client/style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling while drawing */
+    font-family: sans-serif;
+}
+
+#canvas-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+canvas {
+    display: block;
+    cursor: crosshair;
+}
+
+#toolbar {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    z-index: 100;
+}
+
+/* client/style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevents scrollbars from appearing */
+}
+
+#mainCanvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff; /* Or whatever your background color is */
+}
+
+/* User Cursor Indicators */
+.cursor-node {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    pointer-events: none; /* Crucial: clicks pass through to canvas */
+    transition: transform 0.1s linear;
+    z-index: 10;
+}
+
+.cursor-label {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    white-space: nowrap;
+}
