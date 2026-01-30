@@ -5,6 +5,7 @@ export class SocketManager {
         this.canvasManager = canvasManager;
         this.setupListeners();
     }
+}
 const socket = io();
     setupListeners() {
         // Initial state sync
