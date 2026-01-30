@@ -1,6 +1,12 @@
 // client/websocket.js
 export class SocketManager {
     constructor(canvasManager) {
+
+        // In the constructor
+    const params = new URLSearchParams(window.location.search);
+    const roomName = params.get('room') || 'default';
+        this.socket = io({ query: { room: roomName } });
+        
         this.canvasManager = canvasManager;
         // Connect to the server using the current window location
         this.socket = io(); 

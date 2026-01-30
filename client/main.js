@@ -3,6 +3,31 @@ import { CanvasManager } from './canvas.js';
 import { SocketManager } from './websocket.js';
 
 window.addEventListener('DOMContentLoaded', () => {
+
+    // Add these to client/main.js inside the DOMContentLoaded listener
+canvasElement.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // Prevents scrolling while drawing
+    const touch = e.touches[0];
+    const mouseEvent = new MouseEvent('mousedown', {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+    });
+    canvasElement.dispatchEvent(mouseEvent);
+}, { passive: false });
+
+canvasElement.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const mouseEvent = new MouseEvent('mousemove', {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+    });
+    canvasElement.dispatchEvent(mouseEvent);
+}, { passive: false });
+
+canvasElement.addEventListener('touchend', () => {
+    canvasElement.dispatchEvent(new MouseEvent('mouseup'));
+});
     // 1. Initialize Core Managers
     const canvasManager = new CanvasManager('mainCanvas');
     const socketManager = new SocketManager(canvasManager);
