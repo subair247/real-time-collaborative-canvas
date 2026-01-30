@@ -1,9 +1,3 @@
-// client/canvas.js
-
-/**
- * CanvasManager handles all direct interactions with the HTML5 Canvas API.
- * It is responsible for rendering both local and remote strokes.
- */
 export class CanvasManager {
     constructor(canvasId) {
         this.canvas = document.getElementById(canvasId);
@@ -18,10 +12,7 @@ export class CanvasManager {
         window.addEventListener('resize', () => this.setupCanvas());
     }
 
-    /**
-     * Sets the internal resolution and coordinate scaling.
-     * This ensures the drawing doesn't look blurry on high-DPI (Retina) screens.
-     */
+
     setupCanvas() {
         
     // 1. Get the actual screen pixel ratio (important for sharp lines)
@@ -32,7 +23,6 @@ export class CanvasManager {
     this.canvas.style.height = window.innerHeight + 'px';
 
     // 3. Set the INTERNAL DRAWING resolution (The Attributes)
-    // This is what prevents the "half display" or "blurry" issues
     this.canvas.width = window.innerWidth * dpr;
     this.canvas.height = window.innerHeight * dpr;
 
