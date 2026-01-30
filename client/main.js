@@ -30,7 +30,22 @@ window.addEventListener('DOMContentLoaded', () => {
             y: (e.clientY - rect.top) * (scaleY / window.devicePixelRatio)
         };
     };
+// Add inside the DOMContentLoaded listener
+const handleTouch = (e, type) => {
+    e.preventDefault(); // Critical: prevents the page from scrolling while drawing
+    const touch = e.touches[0];
+    const mouseEvent = new MouseEvent(type, {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+    });
+    canvasElement.dispatchEvent(mouseEvent);
+};
 
+canvasElement.addEventListener('touchstart', (e) => handleTouch(e, 'mousedown'), { passive: false });
+canvasElement.addEventListener('touchmove', (e) => handleTouch(e, 'mousemove'), { passive: false });
+canvasElement.addEventListener('touchend', () => {
+    canvasElement.dispatchEvent(new MouseEvent('mouseup'));
+});
     // 4. Set up the event listeners
     canvasElement.addEventListener('mousedown', (e) => {
         isDrawing = true;

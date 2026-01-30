@@ -3,10 +3,10 @@ export class SocketManager {
     constructor(canvasManager) {
 
         // In the constructor
-    const params = new URLSearchParams(window.location.search);
-    const roomName = params.get('room') || 'default';
-        this.socket = io({ query: { room: roomName } });
-        
+    const urlParams = new URLSearchParams(window.location.search);
+    const room = urlParams.get('room') || 'public';
+        this.socket = io({ query: { room: room } });
+
         this.canvasManager = canvasManager;
         // Connect to the server using the current window location
         this.socket = io(); 
