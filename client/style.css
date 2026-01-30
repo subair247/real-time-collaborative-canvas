@@ -59,10 +59,12 @@ button:hover {
     background: #f8f8f8;
 }
 
+/* Ensure the button looks active when selected */
 button.active {
-    background: #007bff;
-    color: white;
+    background-color: #007bff !important;
+    color: white !important;
     border-color: #0056b3;
+    font-weight: bold;
 }
 
 #userCount {
