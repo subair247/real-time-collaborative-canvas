@@ -27,8 +27,8 @@ const socket = io();
         });
 
         // Global Undo/Redo - the server sends the full new history
-        this.socket.on('state-reset', (newHistory) => {
-            this.canvasManager.clearAndReplay(newHistory);
+        this.socket.on('state-reset', (history) => {
+            this.canvasManager.clearAndReplay(history);
         });
 
         // User Presence (Ghost Cursors)
