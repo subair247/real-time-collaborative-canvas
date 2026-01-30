@@ -5,7 +5,7 @@ export class SocketManager {
         this.canvasManager = canvasManager;
         this.setupListeners();
     }
-
+const socket = io();
     setupListeners() {
         // Initial state sync
         this.socket.on('init-history', (history) => {
