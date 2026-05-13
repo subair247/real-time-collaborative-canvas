@@ -1,5 +1,8 @@
 Collaborative Canvas
-A real-time, multi-user drawing application built with the native HTML5 Canvas API and WebSockets. This project demonstrates complex state synchronization, global undo/redo logic, and low-latency communication.
+A real-time, multi-user drawing application built with the native HTML5 Canvas API and WebSockets. This project demonstrates complex state synchronization, global undo/redo logic, and low-latency communication
+
+🔗 Live Demo
+Check out the live application here: **[https://real-time-collaborative-canvas-p7x5.onrender.com](https://real-time-collaborative-canvas-p7x5.onrender.com)**
 
 🚀 Features
 Real-Time Drawing: Every stroke is broadcasted instantly to all connected users.
